@@ -1,1 +1,276 @@
+/* Reset */
 
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* behind everything */
+  background: #f9fbfd; /* same as body bg to blend */
+}
+body.dark #backgroundCanvas {
+  background: #121212;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fbfd;
+  color: #1a1a1a;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #174ea6;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark a {
+  color: #8ab4f8;
+}
+body.dark a:hover {
+  color: #aecbfa;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+body.dark nav {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgb(255 255 255 / 0.1);
+}
+nav .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1a73e8;
+  letter-spacing: 1.5px;
+}
+nav .nav-links {
+  display: flex;
+  gap: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+nav .nav-links a {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+nav .nav-links a:hover {
+  background-color: #e1e9ff;
+  color: #1a40e8;
+}
+body.dark nav .nav-links a:hover {
+  background-color: #2a3a72;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  cursor: pointer;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+.dark-toggle:hover {
+  background: #174ea6;
+}
+body.dark .dark-toggle {
+  background: #8ab4f8;
+  color: #121212;
+}
+body.dark .dark-toggle:hover {
+  background: #aecbfa;
+}
+
+/* Hero / About Me */
+.hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1a73e8;
+}
+body.dark .hero h1 {
+  color: #8ab4f8;
+}
+.hero h1 span {
+  color: #e94e77;
+}
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+}
+body.dark .hero p {
+  color: #ccc;
+}
+
+/* Projects */
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #1a73e8;
+}
+body.dark h2 {
+  color: #8ab4f8;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+.project-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+body.dark .project-card {
+  background: #1f1f1f;
+  box-shadow: 0 8px 20px rgb(255 255 255 / 0.1);
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.1);
+}
+.project-card h3 {
+  margin-bottom: 15px;
+  color: #e94e77;
+}
+body.dark .project-card h3 {
+  color: #f59ea4;
+}
+.project-card p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+body.dark .project-card p {
+  color: #ccc;
+}
+.project-card a {
+  font-weight: 600;
+  color: #1a73e8;
+}
+body.dark .project-card a {
+  color: #8ab4f8;
+}
+
+/* Contact */
+.contact {
+  background: #1a73e8;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+body.dark .contact {
+  background: #174ea6;
+}
+.contact h2 {
+  margin-bottom: 20px;
+}
+.contact p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+.contact ul {
+  list-style: none;
+}
+.contact ul li {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.contact ul li a {
+  color: white;
+  text-decoration: underline;
+}
+.contact ul li a:hover {
+  color: #e94e77;
+}
+
+
+.view-project-btn {
+  background: #e94e77;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-project-btn:hover {
+  background-color: #d43d66;
+}
+
+body.dark .view-project-btn {
+  background-color: #f59ea4;
+  color: #121212;
+}
+
+body.dark .view-project-btn:hover {
+  background-color: #fbbac1;
+}
+
+
+.resized-img {
+  width: 500px;
+  height: auto; /* keeps the aspect ratio */
+
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: #e94e77;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radiu
+}
